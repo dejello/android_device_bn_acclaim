@@ -61,6 +61,10 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_FOLDER)/prebuilt/bin/fix-mac.sh:/system/bin/fix-mac.sh \
 	$(DEVICE_FOLDER)/prebuilt/bin/fix-serial-no.sh:/system/bin/fix-serial-no.sh
 
+# Script for Ubuntu dpi fix
+PRODUCT_COPY_FILES += \
+	$(DEVICE_FOLDER)/prebuilt/bin/acclaim-session.sh:/system/bin/acclaim-session.sh
+
 # permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
@@ -81,7 +85,8 @@ PRODUCT_PACKAGES += \
 	librs_jni \
 	libjni_pinyinime \
 	libwvm \
-	TFF \
+# The Touch Screen Flasher fails to build as it requires java, not currently needed.
+#	TFF \
 	sdcard \
 	com.android.future.usb.accessory \
 	Superuser \
